@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <style>
+        html {
+          height: 190%;
+        }
+        body {
+          font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          background: #0c1320;
+        }
+        
+         div {
+            font-size:x-large;
+            text-align: center;
+            padding: 2px;
+            margin: 2px;
+          }
+          table {
+          font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, tr {
+          border: 1px solid #817e81;
+          text-align: left;
+          padding: 8px;
+         
+        }
+        .login-box form a {
+            position: relative;
+            display:ruby-base-container;
+            padding: 10px 20px;
+            color: #03e9f4;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px
+          }
+        
+          .login-box a:hover {
+            background: #03e9f4;
+            color: #141e30;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03e9f4,
+                        0 0 25px #03e9f4,
+                        0 0 50px #03e9f4,
+                        0 0 100px #03e9f4;
+          }
+        
+          .login-box a span {
+            position: absolute;
+            display: block;
+          }
+        
+        </style>
+
+    <title>View_feedbacks</title>
+</head>
+<body>
+    <div class="login-box">
+        <h2><u><font color="orange">Feedbacks Details</font></u></h2><br>
+               <table>
+                <tr>
+
+                    <td>
+                        <font color="#ff4500">  serial no</font>
+                    </td>
+                    <td>
+                        <font color="#ff4500">  Name</font>
+                    </td>
+                    <td>
+                        <font color="#ff4500">   Feedback</font>
+                    </td>
+                    <td>
+                      <font color="#ff4500">Login Id</font>
+                  </td>
+                    <td>
+                        <font color="#ff4500">   Date</font>
+                    </td>
+                    <td>
+                      <font color="#ff4500"> Time</font>
+                  </td>
+                </tr>
+                {% for i in data %}
+                <tr>
+
+                    <td>
+                        <font color="aqua">  {{ loop.index }}</font>
+                    </td>
+                    <td>
+                        <font color="aqua"> {{ i['first_name'] }}  {{ i['last_name'] }}</font>
+                    </td>
+                    <td>
+                        <font color="aqua">  {{ i['feedbacks'] }}</font>
+                    </td>
+                    <td>
+                      <font color="aqua"> {{ i['login_id'] }}</font>
+                  </td>
+                    <td>
+                        <font color="aqua">  {{ i['date'] }}</font>
+                    </td>
+                  <td>
+                    <font color="aqua">  {{ i['time'] }}</font>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table><br><br><br>
+               <form id="form1" name="form1" method="post" action="">
+                   <a href="/adminhome"><span></span><span></span><span></span><span></span>Back</a>
+               </form>
+      </div>
+</body>
+</html>

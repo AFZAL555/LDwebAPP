@@ -1,0 +1,21 @@
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/base.css">
+    <title>user_profile</title>
+</head>
+<body>
+    <div class="login-box">
+        <h2><u>Profile Details</u></h2><br>
+        <form id="form1" name="form1" method="post" action="">
+            <div class="user-box"><font color="#ff4500">{{ data['first_name'] }} {{ data['last_name'] }}  </font><label>Name:</label></div><br><br>
+            <div class="user-box"><font color="#ff4500">{{ data['gender'] }}</font><label>Gender:</label></div><br><br>
+            <div class="user-box"><font color="#ff4500">{{ data['date_of_birth'] }}</font><label>Date Of Birth:</label></div><br><br>
+            <div class="user-box"><font color="#ff4500">{{ data['email_id'] }}</font><label>Email-Id:</label></div><br><br>
+            <div class="user-box"><font color="#ff4500">{{ data['mobile_number'] }}</font><label>Mobile Number:</label></div><br><br>
+            <a href="/useraccount"><span></span><span></span><span></span><span></span>Back</a>
+        </form>
+      </div>
+      
+</body>
+</html>

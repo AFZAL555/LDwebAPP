@@ -1,0 +1,55 @@
+<center><h2 style=" color:rgb(19, 7, 129);font-size: 28px;"><u><font >Leukemia Detection Webapp Result</font></u></h2><br></center>
+               <table>
+                <tr>
+                    <td>
+                        <font color="#ff4500">  Name:</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font color="#ff4500">   Gender:</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font color="#ff4500">   Age:</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      <font color="#ff4500"> Blood Group:</font>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <font color="#ff4500"> Mobile Number:</font>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <font color="#ff4500"> Result:</font>
+                </td>
+            </tr>
+                {% for i in data %}
+                <tr>
+                    <td>
+                        <font color="aqua"> {{ i['first_name'] }}  {{ i['last_name'] }}</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font color="aqua">  {{ i['feedbacks'] }}</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font color="aqua">  {{ i['date'] }}</font>
+                    </td>
+                </tr>
+                <tr>
+                  <td>
+                    <font color="aqua">  {{ i['time'] }}</font>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table><br><br><br>
