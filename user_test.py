@@ -2,7 +2,7 @@ from PIL import Image
 class test1:
     def __init__(self):
         self.mydataset_values=""
-        self.staticpath="C:\\Users\\aj\\Desktop\\Finalyearproject\\LDwebapp\\static\\"
+        self.staticpath="home\\afzal\\Desktop\\LDwebapp\\static\\"
         self.result=""
 
     def find_result(self,filename):

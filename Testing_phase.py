@@ -1,6 +1,6 @@
 
 
-staticpath="C:\\Users\\aj\\Desktop\\Finalyearproject\\LDwebapp\\static\\"
+staticpath="home\\afzal\\Desktop\\LDwebapp\\static\\"
 mydataset_values = staticpath + "Test\\Im062_1.jpg"
 
 from PIL import Image

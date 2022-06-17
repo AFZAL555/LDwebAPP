@@ -1,9 +1,8 @@
 import os
 from DBConnection import Db
 
-staticpath="C:\\Users\\aj\\Desktop\\Finalyearproject\\LDwebapp\\static\\"
+staticpath="\\home\\afzal\\Desktop\\LDwebapp\\static\\"
 mydataset=os.listdir(staticpath+"Train\\")
-
 for entry in mydataset:
     filename=entry.split(".") [0]
     label=filename.split("_") [1]

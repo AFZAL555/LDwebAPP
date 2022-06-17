@@ -18,15 +18,14 @@ mail = Mail(app)
 
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'leukemiatesting007@gmail.com'
-app.config['MAIL_PASSWORD'] = 'leukemiaDetection@007'
+app.config['MAIL_USERNAME'] = 'sicklecellanemiasca@gmail.com'
+app.config['MAIL_PASSWORD'] = 'ihpxfpfkwjtwyotx'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app) 
 otp=randint(000000,999999)
 
 static_path="home\\afzal\\Desktop\\LDwebapp\\static\\"
-
 app.secret_key="LDAPP900"
 
 @app.route('/')
@@ -47,12 +46,12 @@ def loginpost234():
         lid=re['login_id']
         session['lid']=lid
         if re77=="Not_Verified":
-            msg = Message('OTP',sender ='leukemiatesting007@gmail.com',recipients = [username])
+            msg = Message('OTP',sender ='sicklecellanemiasca@gmail.com',recipients = [username])
             msg.body="Hello,\r\n Your OTP is  "+str(otp)+"."
             mail.send(msg)
             return render_template('otpverification.html')
         elif re77=="Verified":
-                msg = Message('Login Info',sender ='leukemiatesting007@gmail.com',recipients = [username])
+                msg = Message('Login Info',sender ='sicklecellanemiasca@gmail.com',recipients = [username])
                 msg.body="Hello,\r\n You are logged in CCA-Webapp Successfully.\r\n"
                 mail.send(msg)
                 return redirect(url_for('login_page1'))
@@ -74,7 +73,7 @@ def loginpost():
             return redirect(url_for('admin'))
         elif type=="user":
             if re77=="Not_Verified":
-                msg = Message('OTP',sender ='leukemiatesting007@gmail.com',recipients = [username])
+                msg = Message('OTP',sender ='sicklecellanemiasca@gmail.com',recipients = [username])
                 msg.body="Hello, Your OTP is  "+str(otp)+"."
                 mail.send(msg)
                 return render_template('otpverification.html')
@@ -128,7 +127,7 @@ def registerpost():
         lid=re345['login_id']
         session['lid']=lid
         re42=db.insert("INSERT INTO user_table VALUES(NULL ,'"+firstname+"','"+lastname+"','"+gender+"','"+dateofbirth+"','"+emailid+"','"+mobilenumber+"','"+str(lid)+"','Not_Verified')")
-        msg = Message('Login Info',sender ='leukemiatesting007@gmail.com',recipients = [emailid])
+        msg = Message('Login Info',sender ='sicklecellanemiasca@gmail.com',recipients = [emailid])
         msg.body="Hello,\r\n\r\nYour Login Informations\r\n\r\n" "Username= "+emailid+".\r\nPassword= "+password
         mail.send(msg)
         return render_template('message8.html')
@@ -259,8 +258,8 @@ def download():
     html = render_template('pdf.html',data=res98)
     pdf = pdfkit.from_string(html,static_path+"TestResult.pdf")
     mail_content = "Hello,\r\n\r\nYour Test Result is here,\r\n\r\n" 
-    sender_address = 'leukemiatesting007@gmail.com'
-    sender_pass = 'leukemiaDetection@007'
+    sender_address = 'sicklecellanemiasca@gmail.com'
+    sender_pass = 'ihpxfpfkwjtwyotx'
     receiver_address = res98['email']
     message = MIMEMultipart()
     message['From'] = sender_address
@@ -309,7 +308,7 @@ def changepasswordpost():
                 re390=db1.update("UPDATE login SET PASSWORD='"+newpassword+"' WHERE login_id='"+str(lid)+"'")
                 re42=db1.selectOne("select* from login where login_id='"+str(lid)+"' AND password='"+newpassword+"'")
                 email=re42['username']
-                msg = Message('Password Changed',sender ='leukemiatesting007@gmail.com',recipients = [email])
+                msg = Message('Password Changed',sender ='sicklecellanemiasca@gmail.com',recipients = [email])
                 msg.body = 'Hello! \r\n\r\n Your are successfully Changed Your Password.\r\n\r\n Your New password is  '+newpassword
                 mail.send(msg)
                 return render_template('message3.html')
