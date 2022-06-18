@@ -2,11 +2,11 @@ from PIL import Image
 class test1:
     def __init__(self):
         self.mydataset_values=""
-        self.staticpath="home\\afzal\\Desktop\\LDwebapp\\static\\"
+        self.staticpath="/home/afzal/Desktop/LDwebapp/static/"
         self.result=""
 
     def find_result(self,filename):
-        self.mydataset_values = self.staticpath + "uploads\\"+ filename
+        self.mydataset_values = self.staticpath + "uploads/"+ filename
 
         img = Image.open(self.mydataset_values)
         imgGray = img.convert('L')

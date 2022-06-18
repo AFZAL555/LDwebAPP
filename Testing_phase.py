@@ -1,7 +1,5 @@
-
-
-staticpath="home\\afzal\\Desktop\\LDwebapp\\static\\"
-mydataset_values = staticpath + "Test\\Im062_1.jpg"
+staticpath="/home/afzal/Desktop/LDwebapp/static/"
+mydataset_values = staticpath + "Test/Im162.jpg"
 
 from PIL import Image
 

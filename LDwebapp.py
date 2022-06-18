@@ -12,6 +12,7 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 from email import encoders
 
+
 app = Flask(__name__)
 mail = Mail(app)
  
@@ -25,7 +26,7 @@ app.config['MAIL_USE_SSL'] = True
 mail = Mail(app) 
 otp=randint(000000,999999)
 
-static_path="home\\afzal\\Desktop\\LDwebapp\\static\\"
+static_path="/home/afzal/Desktop/LDwebapp/static/"
 app.secret_key="LDAPP900"
 
 @app.route('/')
@@ -158,12 +159,12 @@ def user_account3():
         return render_template('message12.html')
     return redirect(url_for('user_account2'))
 
-@app.route('/leukemiainfo')
+@app.route('/anemiainfo')
 def leukemia_info():
     db = Db()
     if session.get('lid') is None:
         return render_template('message12.html')
-    return render_template('Leukemia_info.html')
+    return render_template('anemia_info.html')
 
 @app.route('/back')
 def user_account4():
@@ -225,7 +226,7 @@ def taketest_post():
     import time
     timestr=time.strftime("%Y%m%d_%H%M%S")
     filename=timestr+".jpg"
-    file.save(static_path+"uploads\\"+filename)
+    file.save(static_path+"uploads/"+filename)
     t1=test1()
     res=t1.find_result(filename)
     cl_id=str(session['cl_id'])
@@ -239,7 +240,7 @@ def taketest_post1():
     import time
     timestr=time.strftime("%Y%m%d_%H%M%S")
     filename=timestr+".jpg"
-    file.save(static_path+"uploads\\"+filename)
+    file.save(static_path+"uploads/"+filename)
     t1=test1()
     res=t1.find_result(filename)
     cl_id=str(session['cl_id'])
@@ -356,7 +357,7 @@ def admin():
     if session.get('lid') is None:
         return render_template('message12.html')
     lid = session['lid']
-    res98 = db.selectOne("select* from login where login_id='" + str(lid) + "'")
+    res98 = db.selectOne("select* from user_table where login_id='" + str(lid) + "'")
     return render_template('adminhomepage.html',data=res98)
 
 
@@ -396,7 +397,7 @@ def admin6():
     db = Db()
     if session.get('lid') is None:
         return render_template('message12.html')
-    re2 = db.select("SELECT feedback.*,user_table.* FROM feedback,USER_table WHERE user_table.login_id=feedback.login_id")
+    re2 = db.select("SELECT feedback.*,user_table.* FROM feedback,user_table WHERE user_table.login_id=feedback.login_id")
     if len(re2) > 0:
         return render_template('viewfeedback.html', data=re2)
     else:

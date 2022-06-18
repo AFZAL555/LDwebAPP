@@ -1,13 +1,13 @@
 import os
 from DBConnection import Db
 
-staticpath="\\home\\afzal\\Desktop\\LDwebapp\\static\\"
-mydataset=os.listdir(staticpath+"Train\\")
+staticpath="/home/afzal/Desktop/LDwebapp/static/"
+mydataset=os.listdir(staticpath+"Train/")
 for entry in mydataset:
     filename=entry.split(".") [0]
     label=filename.split("_") [1]
 
-    mydataset_values = staticpath + "Train\\" + entry
+    mydataset_values = staticpath + "Train/" + entry
 
     from PIL import Image
 
