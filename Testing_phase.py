@@ -88,9 +88,9 @@ if y_pred==[0] :
 
 else:
     print("Positive")
-    if((K>0.36 and K<=0.55)and(l>1983 and l<2567)and(m>0.90 and m<=0.93)and(n>0.60 and n<=0.71)):
+    if((K>0.36 and K<=0.55)and(l>1983 and l<=2567)and(m>0.90 and m<=0.93)and(n>0.60 and n<=0.71)):
         print("stage-1")
-    elif((K>0.75 and K<0.90)and(l>179 and l<499)and(m>0.95 and m<0.98)and(n>0.81 and n<0.95)):
+    elif((K>0.56 and K<0.90)and(l>2567 and l<499)and(m>0.94 and m<0.98)and(n>0.72 and n<0.95)):
         print("stage-2")
     else:
          print("cannot identified the stage")
